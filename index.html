@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="">
     <title>10 mail</title>
 </head>
 <body>
 
     <div id="app">
-        <ul>
+        <button @click="sendMeMail">Stampa Lista Mail</button>
+        <button @click="reset">Svuota lista</button>
+
+        <p v-if="isLoading">Loading...</p>
+
+        <ol v-else>
             <li v-for="curMail in listMail">
                 {{ curMail }}
             </li>
-        </ul>
-
+        </ol>
+    
     </div>
 
 
